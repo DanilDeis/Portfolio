@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        {% block title %}
+        Base Title
+        {% endblock %}
+    </title>
+    	{% load static %} 
+        <link rel="icon" href="{% static 'img/favicon.ico' %}" type="image/x-icon"> 
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates&display=swap" rel="stylesheet">
+    <style>
+          body {
+            background-color: #f0f0f0; /* Серый фон */
+            font-family: 'Montserrat Alternates', sans-serif; /* Использование загруженного шрифта */
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #f0f0f0; /* Цвет фона заголовка */
+            padding: 20px; /* Отступы вокруг заголовка */
+        }
+        .fixed-container {
+            max-width: 1000px;
+            margin-right: auto;
+            margin-left: auto; /* Центрирует контейнер */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        a {
+            margin-left: 20px; /* Расстояние между ссылками */
+            text-decoration: none;
+            color: black;
+        }
+        a:hover {
+            color: red; /* Цвет ссылки при наведении */
+        }
+        h3, h6 {
+            margin-bottom: 0; /* Устанавливаем желаемый отступ между заголовками и следующими элементами */
+        }
+
+        /* Медиазапросы для адаптивного дизайна */
+        @media (max-width: 600px) {
+            .fixed-container {
+                flex-direction: column; /* Изменяет направление на вертикальное */
+                align-items: flex-start; /* Выравнивает элементы по левому краю */
+            }
+            
+            a {
+                margin-left: 0; /* Убирает отступы между ссылками */
+                margin-bottom: 10px; /* Добавляет отступ снизу между ссылками */
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="fixed-container">
+        <div>
+            <span><h3>Портфолио</h3></span>
+        </div>
+        <div>
+            <a href="{% url 'main_port:home' %}">Главная</a>
+            <a href="{% url 'main_port:about' %}">Обо мне</a>
+            <a href="{% url 'main_port:contact' %}">Контакты</a>
+        </div>
+    </div>
+</header>
+
+{% block body %}
+Base Body
+{% endblock %}
+
+</body>
+</html>
+

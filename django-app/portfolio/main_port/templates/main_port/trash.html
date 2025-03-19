@@ -1,0 +1,57 @@
+{% extends 'main_port/base.html' %}
+{% block title %}Контакты{% endblock %}
+
+{% load static %}
+{% block body %}
+
+<div class="derict">
+    <div class="image-container">
+        <img src="{% static 'img/sub.jpg' %}" alt="Мое фото" class="centered-image">
+    </div>
+</div>
+   <footer>
+             <div class="fixed-container" style="display: flex; justify-content: space-between; align-items: center;">
+                <span>&copy; 2024 Портфолио Python разработчика</span>
+                <div>
+                    <a href="https://t.me/+79237222518" target="_blank">
+                        <img src="{% static 'img/telega.jpg' %}" alt="Telegram" width="30" height="30">
+                    </a>
+                    <a href="mailto:danildeis100@mail.ru" target="_blank">
+                        <img src="{% static 'img/email.jpg' %}" alt="Email" width="30" height="30">
+                    </a>
+                </div>
+            </div>
+    </footer>
+<style>
+    .fixed-container {
+        position: relative; /* Для фиксированного позиционирования, если нужно */
+    }
+
+    .derict {
+        display: flex; /* Используем Flexbox для центрирования */
+        justify-content: center; /* Центрируем по горизонтали */
+        align-items: center; /* Центрируем по вертикали */
+        height: 100vh; /* Устанавливаем высоту контейнера */
+        color: white;
+    }
+
+    .image-container {
+        max-width: 100%; /* Ограничиваем максимальную ширину изображения */
+        height: auto; /* Сохраняем пропорции изображения */
+        display: flex;
+    }
+
+    .centered-image {
+        max-width: 100%; /* Ограничиваем ширину изображения */
+        height: auto; /* Сохраняем пропорции изображения */
+    }
+   body {
+            background-color: white; /* Серый фон */
+    }
+   header {
+        background-color: white; /* Цвет фона заголовка */
+        padding: 20px; /* Отступы вокруг заголовка */
+    }
+
+</style>
+{% endblock %}

@@ -1,0 +1,111 @@
+{% extends 'main_port/base.html' %}
+{% block title %}
+Контакты
+
+{% endblock %}
+
+{% block body %}
+<div class="fixed-container">
+        <h3>Сообщение</h3>
+</div>
+<div class="fixed-container">
+    <div class="plus_container">
+        <h5>Если есть вопросы и предложения по работе, вы можете связаться со мной либо написать в форме ниже</h5>
+    </div>
+</div>
+<div class="fixed-container">
+    <form method="post">
+        {% csrf_token %}
+        {% for field in form %}
+            <div class="form-group">
+                <label for="{{ field.id_for_label }}">{{ field.label }}</label>  <!-- Название поля сверху -->
+                {{ field }}
+                {% if field.errors %}
+                    <div class="error">{{ field.errors }}</div>  <!-- Ошибки, если есть -->
+                {% endif %}
+            </div>
+        {% endfor %}
+        <button type="submit">Отправить</button>
+    </form>
+    <div class="minus_container">
+        <b>Aдрес:</b>
+        <p> г. Барнаул, ул.Новгородская, 18 </p>
+         <b>Телефон:</b>
+        <p> +7 - 923 - 722 -25 - 18</p>
+         <b>Email:</b>
+        <p> danildeis100@mail.ru</p>
+    </div>
+</div>
+{% load static %}
+<footer>
+             <div class="fixed-container" style="display: flex; justify-content: space-between; align-items: center;">
+                <span>&copy; 2024 Портфолио Python разработчика</span>
+                <div>
+                    <a href="https://t.me/+79237222518" target="_blank">
+                        <img src="{% static 'img/telega.jpg' %}" alt="Telegram" width="30" height="30">
+                    </a>
+                    <a href="mailto:danildeis100@mail.ru" target="_blank">
+                        <img src="{% static 'img/email.jpg' %}" alt="Email" width="30" height="30">
+                    </a>
+                </div>
+            </div>
+</footer>
+
+<style>
+
+.plus_container {
+    width: 500px; /* Установите желаемую ширину */
+    text-align: left; /* Выравнивание текста по левому краю */
+    margin: 10px; /* Убираем отступы по умолчанию */
+    padding: 0; /* Добавляем внутренние отступы для удобства чтения */
+}
+
+h3, h5 { /* Измените h6 на h5, если используете h5 в HTML */
+    margin: 0; /* Убираем все отступы у заголовков */
+    text-align: left;
+}
+
+.minus_container {
+    width: 400px; /* Установите желаемую ширину, например 400px */
+    height: 300px;
+    text-align: left; /* Выравнивание текста по левому краю */
+    margin: 10px right; /* Центрируем контейнер и устанавливаем общий отступ */
+    overflow-wrap: break-word; /* Перенос длинных слов на новую строку */
+}
+
+p {
+    font-size: 12px; /* Установите желаемый размер шрифта */
+}
+
+b {
+    font-size: 15px; /* Установите желаемый размер шрифта */
+}
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+
+input,  select {
+    width: 200px; /* Убираем 100% */
+    max-width: 300px; /* Устанавливаем максимальную ширину */
+}
+
+label {
+    margin-bottom: 5px; /* Отступ между меткой и полем ввода */
+    width: auto;
+}
+textarea {
+    width: auto; /* Убираем 100% */
+    max-width: 300px; /* Устанавливаем максимальную ширину */
+}
+footer {
+    margin-top: 40px; /* Установите желаемое значение отступа */
+}
+
+
+
+</style>
+{% endblock %}
+
+

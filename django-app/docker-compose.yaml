@@ -1,0 +1,26 @@
+version: "3.7"
+
+services:
+  app:
+    build:
+       dockerfile: ./Dockerfile
+       context: .
+#      dockerfile: ./Dockerfile
+    command: "gunicorn portfolio.wsgi:application --bind 0.0.0.0:8000"
+    ports:
+      - "8000:8000"
+    restart: always
+    environment:
+      - DJANGO_SETTINGS_MODULE=portfolio.settings
+      - DATABASE_URL=sqlite:///db.sqlite3
+    logging:
+      driver: "json-file"
+      options:
+        max-file: "10"
+        max-size: "200k"
+    volumes:
+      - database:/app/database  # объявление тома
+
+volumes:
+  database:
+    driver: local

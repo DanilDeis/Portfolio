@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "portfolio"
+version = "0.1.0"
+description = ""
+authors = ["danildeis <danildeis100@mail.ru>"]
+
+
+[tool.poetry.dependencies]
+whitenoise = {version = "^6.7.0", python = ">=3.8"}
+django = {version = "^5.1.2", python = ">=3.10,<4.0"}
+django-rest-framework = "^0.1.0"
+djangorestframework = {version = "^3.15.2", python = ">=3.8"}
+gunicorn = {version = "^23.0.0", python = ">=3.7"}
+Pillow = {version = "^11.0.0", python = ">=3.9"}
+django-debug-toolbar = {version = "^4.4.6", python = ">=3.8"}
+django-filter = {version = "^24.3", python = ">=3.8"}
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

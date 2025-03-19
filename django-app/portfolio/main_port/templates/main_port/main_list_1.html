@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+{% load static %}
+<html>
+    <head>
+	<link rel="icon" href="{% static 'img/favicon.ico' %}" type="image/x-icon"> 
+        <title>Портфолио Python разработчика</title>
+       <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates&display=swap" rel="stylesheet">
+        <style>
+            body {
+                background-color: #f0f0f0; /* Серый фон */
+            }
+            * {
+                font-family: 'Montserrat Alternates', sans-serif; /* Использование загруженного шрифта */
+            }
+            html,body{
+                margin: 0;
+                padding: 0;
+            }
+            header {
+                margin: 0;
+                padding: 0 0;
+            }
+            header > div{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            .fixed-container{
+                max-width:1000px;
+                height: 100%;
+                margin-left: auto;
+                margin-right: auto;
+
+            }
+
+            .fixed-container h2 {
+                margin-bottom: 0;
+            }
+
+            .fixed-container p {
+                margin-top: 0;
+            }
+            .first-block > div{
+                display: flex;
+                flex-direction:column;
+                justify-content: center;
+                align-items: flex-start;
+
+            }
+           .about_me {
+                min-height: 200px; /* Минимальная высота контейнера */
+                text-align: center; /* Центрирование текста */
+                max-width: 600px; /* Максимальная ширина контейнера */
+                width: 40%; /* Уменьшите ширину контейнера до 40% */
+                margin: 20px auto; /* Центрирует контейнер по горизонтали и добавляет отступ сверху и снизу */
+                padding: 20px; /* Внутренние отступы */
+
+            }
+        .about_me h4 {
+                margin-bottom: 10px;
+
+            }
+        .about_me p {
+                line-height: 1.6;
+
+            }
+
+            .container {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+            }
+
+            .item {
+                flex: 1 1 calc(30% - 10px); /* Устанавливает ширину элемента */
+                margin: 10px; /* Отступы вокруг каждого элемента */
+                border-radius: 8px; /* Закругленные углы */
+                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            }
+
+            .item img {
+                width: 100%;
+                height: auto;
+            }
+
+            a{
+                color: black;
+                text-decoration: none;
+            }
+            a:hover {
+                color: red;
+                text-decoration: underline;
+            }
+
+
+
+           .list ul {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 0; /* Убираем отступы */
+                margin: 0; /* Убираем внешние отступы */
+                font-size: 10px; /* Задайте желаемый размер шрифта */
+            }
+
+            .list li {
+                margin-right: 10px; /* Отступ между элементами списка */
+            }
+
+	    @media (max-width: 600px) { 
+           .about_me {
+               width: 90%; /* Увеличивает ширину контейнера до 90% на мобильных устройствах */
+           }
+           .item {
+               flex: 1 1 calc(100% - 20px); /* Устанавливает ширину элемента на 100% с учетом отступов */
+               margin: 10px 0; /* Убирает боковые отступы */
+           }
+           .list ul {
+               flex-direction: column; /* Изменяет направление списка на вертикальное */
+               align-items: flex-start; /* Выравнивает элементы списка по левому краю */
+           }
+           .list li {
+               margin-right: 0; /* Убирает правый отступ между элементами списка */
+               margin-bottom: 10px; /* Добавляет отступ снизу между элементами списка */
+           }
+       }
+        </style>
+    </head>
+    <body>
+        <header>
+            <div class="fixed-container">
+                <div>
+                    <span><h3> Портфолио </h3></span>
+                </div>
+                <div>
+                    <a href="{% url 'main_port:home' %}">Главная</a>
+                    <a href="{% url 'main_port:about' %}">Обо мне</a>
+                    <a href="{% url 'main_port:contact' %}">Контакты</a>
+                </div>
+            </div>
+        </header>
+
+        <section class="first-block">
+            <div class="fixed-container">
+                <h2>Дейс Данил</h2>
+                <p>Python разработчик</p>
+            </div>
+        </section>
+
+
+        </section>
+            <div class="block-image">
+                <div class="fixed-container">
+                    <h4>Стек технологий</h4>
+                    <div class="container">
+                        <div class="item">
+                            <img src="{% static 'img/docker.jpg' %}" alt="My Image">
+
+                        </div>
+                        <div class="item">
+                            <img src="{% static 'img/git_2.jpg' %}" alt="My Image">
+                        </div>
+                        <div class="item">
+                             <img src="{% static 'img/linux.jpg' %}" alt="My Image">
+
+                        </div>
+                        <div class="item">
+                           <img src="{% static 'img/flask.jpg' %}" alt="My Image">
+                        </div>
+                        <div class="item">
+                            <img src="{% static 'img/python.jpg' %}" alt="My Image">
+                        </div>
+                        <div class="item">
+                            <img src="{% static 'img/sql.jpg' %}" alt="My Image">
+                        </div>
+
+
+                        <div class="item">
+                            <img src="{% static 'img/django.jpg' %}" alt="My Image">
+                        </div>
+                        <div class="item">
+                            <img src="{% static 'img/html.jpg' %}" alt="My Image">
+                        </div>
+                        <div class="item">
+                            <img src="{% static 'img/msql.jpg' %}" alt="My Image">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="about_me">
+             <div class="fixed-container">
+                 <h4>Мои навыки </h4>
+                 <p>Это основной стек технологий, который я использовал при обучении и
+                     работе над Pet проектами. Готов изучать другие технологии
+                     для дальнейшего развития и становления себя, как профессионала.</p>
+             </div>
+        </section>
+          <footer>
+             <div class="fixed-container" style="display: flex; justify-content: space-between; align-items: center;">
+                <span>&copy; 2024 Портфолио Python разработчика</span>
+                <div>
+                    <a href="https://t.me/+79237222518" target="_blank">
+                        <img src="{% static 'img/telega.jpg' %}" alt="Telegram" width="30" height="30">
+                    </a>
+                    <a href="mailto:danildeis100@mail.ru" target="_blank">
+                        <img src="{% static 'img/email.jpg' %}" alt="Email" width="30" height="30">
+                    </a>
+                </div>
+            </div>
+        </footer>
+        <section class="list">
+            <div class="fixed-container">
+                <ul>
+                    Python Java C# C++ JavaScript Ruby PHP Swift Go Kotlin HTML CSS React Angular Vue.js Django Flask Ruby on Rails SQL
+                    MySQL PostgreSQL SQLite NoSQL MongoDB Cassandra Redis Docker Kubernetes Vagrant Git IDE PyCharm Visual Studio
+                    Code Eclipse Unit testing pytest JUnit Selenium Agile Scrum Kanban TensorFlow Keras scikit-learn Pandas NumPy
+                    React Native Flutter Swift Kotlin AWS Google Cloud Platform Microsoft Azure Jenkins Travis CI GitLab CI MVC MVVM
+                    OLE COM Unity Unreal Engine Jira Trello
+                </ul>
+            </div>
+        </section>
+
+    </body>
+</body>
+</html>
+
+
